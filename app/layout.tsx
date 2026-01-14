@@ -42,7 +42,7 @@ export default function RootLayout({
       <body className={`${playfair.variable} ${lato.variable} antialiased`}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
+          defaultTheme="light"
           enableSystem
           disableTransitionOnChange
         >
