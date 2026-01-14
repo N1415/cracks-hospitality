@@ -79,18 +79,6 @@ export function FoundersSection() {
                 {t(`${founder.key}.bio`)}
               </p>
 
-              {/* Achievements */}
-              <div className="space-y-2">
-                {[1, 2, 3].map((num) => (
-                  <div
-                    key={num}
-                    className="inline-flex items-center gap-2 text-sm text-muted-foreground bg-background px-4 py-2 rounded-full mx-1"
-                  >
-                    <span className="w-1.5 h-1.5 bg-secondary rounded-full" />
-                    {t(`${founder.key}.achievements.${num}`)}
-                  </div>
-                ))}
-              </div>
             </motion.div>
           ))}
         </div>

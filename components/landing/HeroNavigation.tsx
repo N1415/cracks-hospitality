@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
-import { Link, usePathname, useRouter } from '@/i18n/navigation';
+import { usePathname, useRouter } from '@/i18n/navigation';
 import { ThemeToggle } from '@/components/shared/ThemeToggle';
 import { Menu, Globe } from 'lucide-react';
 import { locales, type Locale, localeNames } from '@/i18n/config';
@@ -21,15 +21,17 @@ import {
   SheetTrigger,
 } from '@/components/ui/sheet';
 
-export function Navigation() {
+interface HeroNavigationProps {
+  onScrollPastHero?: (pastHero: boolean) => void;
+}
+
+export function HeroNavigation({ onScrollPastHero }: HeroNavigationProps) {
   const t = useTranslations('nav');
   const locale = useLocale() as Locale;
   const router = useRouter();
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
-  const [visible, setVisible] = useState(false);
-  const [lastScrollY, setLastScrollY] = useState(0);
-  const [scrolled, setScrolled] = useState(false);
+  const [visible, setVisible] = useState(true);
 
   const handleLocaleChange = (newLocale: Locale) => {
     router.replace(pathname, { locale: newLocale });
@@ -37,29 +39,16 @@ export function Navigation() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      const isPastHero = currentScrollY > 100;
-
-      setScrolled(currentScrollY > 50);
-
-      // Only show this navbar when past hero section
-      if (!isPastHero) {
-        // In hero section - hide this navbar (hero nav is showing)
-        setVisible(false);
-      } else if (currentScrollY > lastScrollY) {
-        // Scrolling down past hero - hide
-        setVisible(false);
-      } else {
-        // Scrolling up past hero - show
-        setVisible(true);
-      }
-
-      setLastScrollY(currentScrollY);
+      const scrollY = window.scrollY;
+      // Hide hero nav after scrolling 100px
+      const shouldHide = scrollY > 100;
+      setVisible(!shouldHide);
+      onScrollPastHero?.(shouldHide);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [lastScrollY]);
+  }, [onScrollPastHero]);
 
   const navLinks = [
     { href: '#about', label: t('about') },
@@ -74,58 +63,33 @@ export function Navigation() {
 
   return (
     <nav
-      className={`fixed top-4 inset-x-0 z-50 px-4 transition-all duration-300 ${
+      className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
         visible ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'
       }`}
     >
-      <div className="max-w-5xl mx-auto">
-        <div
-          className={`flex items-center justify-between h-14 px-4 rounded-xl backdrop-blur-md shadow-lg border border-border transition-colors ${
-            scrolled
-              ? 'bg-background/90'
-              : 'bg-background/70'
-          }`}
-        >
-          {/* Left Side - Logo + Nav Links */}
-          <div className="flex items-center gap-6">
-            {/* Logo */}
-            <Link href="/" className="flex items-center gap-2">
-              <img
-                src="https://moyusgyrteirxbivehyz.supabase.co/storage/v1/object/public/Logos/png/hospitality_black.png"
-                alt="Cracks Hospitality"
-                className="h-8 dark:hidden"
-              />
-              <img
-                src="https://moyusgyrteirxbivehyz.supabase.co/storage/v1/object/public/Logos/png/hospitality_white.png"
-                alt="Cracks Hospitality"
-                className="h-8 hidden dark:block"
-              />
-            </Link>
-
-            {/* Nav Links - Desktop */}
-            <div className="hidden md:flex items-center gap-6">
-              {navLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  {link.label}
-                </a>
-              ))}
-            </div>
-          </div>
-
-          {/* Right Side - Desktop */}
-          <div className="hidden md:flex items-center gap-2">
+      <div className="w-full">
+        <div className="flex items-center justify-center h-16 px-6 md:px-12 lg:px-16 bg-transparent">
+          {/* Desktop Layout */}
+          <div className="hidden md:flex items-center gap-8">
+            {/* Nav Links */}
+            {navLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="text-sm text-foreground/80 hover:text-foreground transition-colors font-medium"
+              >
+                {link.label}
+              </a>
+            ))}
+            {/* Theme/Language - Next to Contact */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost" size="icon" className="size-8">
+                <Button variant="ghost" size="icon" className="size-9 text-foreground/80 hover:text-foreground hover:bg-foreground/10">
                   <Globe className="size-4" />
                   <span className="sr-only">Change language</span>
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent align="end">
+              <DropdownMenuContent align="start">
                 {locales.map((loc) => (
                   <DropdownMenuItem
                     key={loc}
@@ -140,30 +104,36 @@ export function Navigation() {
             <ThemeToggle />
           </div>
 
-          {/* Mobile Menu */}
-          <div className="flex md:hidden items-center gap-2">
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button variant="ghost" size="icon" className="size-8">
-                  <Globe className="size-4" />
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="end">
-                {locales.map((loc) => (
-                  <DropdownMenuItem
-                    key={loc}
-                    onClick={() => handleLocaleChange(loc)}
-                    className={locale === loc ? 'bg-accent' : ''}
-                  >
-                    {localeNames[loc]}
-                  </DropdownMenuItem>
-                ))}
-              </DropdownMenuContent>
-            </DropdownMenu>
-            <ThemeToggle />
+          {/* Mobile Layout */}
+          <div className="flex md:hidden items-center justify-between w-full">
+            {/* Left - Language/Theme */}
+            <div className="flex items-center gap-1">
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button variant="ghost" size="icon" className="size-9 text-foreground/80 hover:text-foreground hover:bg-foreground/10">
+                    <Globe className="size-4" />
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="start">
+                  {locales.map((loc) => (
+                    <DropdownMenuItem
+                      key={loc}
+                      onClick={() => handleLocaleChange(loc)}
+                      className={locale === loc ? 'bg-accent' : ''}
+                    >
+                      {localeNames[loc]}
+                    </DropdownMenuItem>
+                  ))}
+                </DropdownMenuContent>
+              </DropdownMenu>
+              <ThemeToggle />
+            </div>
+
+            {/* Right - Burger Menu */}
+            <div className="flex">
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className="size-8">
+                <Button variant="ghost" size="icon" className="size-9 text-foreground/80 hover:text-foreground hover:bg-foreground/10">
                   <Menu className="size-5" />
                 </Button>
               </SheetTrigger>
@@ -196,6 +166,7 @@ export function Navigation() {
                 </div>
               </SheetContent>
             </Sheet>
+            </div>
           </div>
         </div>
       </div>

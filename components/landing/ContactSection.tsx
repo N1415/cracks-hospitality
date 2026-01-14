@@ -36,7 +36,10 @@ export function ContactSection() {
     setStatus('sending');
 
     try {
-      const response = await fetch('https://api.cracks-app.com/public/contact', {
+      const apiUrl = process.env.NODE_ENV === 'development'
+        ? 'http://localhost:5001/public/contact'
+        : 'https://api.cracks-app.com/public/contact';
+      const response = await fetch(apiUrl, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -64,6 +67,7 @@ export function ContactSection() {
           interest: '',
           message: '',
         });
+        setTimeout(() => setStatus('idle'), 3000);
       } else {
         setStatus('error');
       }

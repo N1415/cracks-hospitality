@@ -1,9 +1,11 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
+import { useTheme } from 'next-themes';
 import { motion } from 'motion/react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Users, Palette, Calendar, Settings, Brain, LineChart, Search, UserCheck } from 'lucide-react';
+import { AnimatedGridPattern } from '@/components/ui/animated-grid-pattern';
 
 const studioFeatures = [
   { key: 'concept', icon: Palette },
@@ -21,10 +23,22 @@ const appFeatures = [
 
 export function ProductsSection() {
   const t = useTranslations('products');
+  const { resolvedTheme } = useTheme();
+
+  const studioLogo = resolvedTheme === 'dark'
+    ? 'https://moyusgyrteirxbivehyz.supabase.co/storage/v1/object/public/Logos/png/studio_black.png'
+    : 'https://moyusgyrteirxbivehyz.supabase.co/storage/v1/object/public/Logos/png/studio_white.png';
 
   return (
-    <section id="products" className="py-24 lg:py-32">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="products" className="relative py-24 lg:py-32 bg-background">
+      <AnimatedGridPattern
+        numSquares={30}
+        maxOpacity={0.1}
+        duration={3}
+        repeatDelay={1}
+        className="[mask-image:linear-gradient(to_left,white,transparent),linear-gradient(to_bottom,transparent,white_20%,white_80%,transparent)] [mask-composite:intersect] fill-primary stroke-primary dark:fill-primary/30 dark:stroke-primary/30"
+      />
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -51,14 +65,14 @@ export function ProductsSection() {
               {/* Logo */}
               <div className="mb-6">
                 <img
-                  src="https://moyusgyrteirxbivehyz.supabase.co/storage/v1/object/public/Logos/png/studio_white.png"
+                  src={studioLogo}
                   alt="Cracks Studio"
                   className="h-10"
                 />
               </div>
 
               {/* Tagline */}
-              <p className="text-sm text-background/60 tracking-wide uppercase mb-4">
+              <p className="text-xl text-background tracking-wide mb-4 font-serif font-semibold" style={{ fontVariant: 'small-caps' }}>
                 {t('studio.tagline')}
               </p>
 
@@ -119,12 +133,12 @@ export function ProductsSection() {
               </div>
 
               {/* Tagline */}
-              <p className="text-sm text-primary-foreground/60 tracking-wide uppercase mb-4">
+              <p className="text-xl text-secondary tracking-wide mb-4 font-serif font-semibold" style={{ fontVariant: 'small-caps' }}>
                 {t('app.tagline')}
               </p>
 
               {/* Description */}
-              <p className="text-primary-foreground/80 mb-8 flex-grow">
+              <p className="text-md text-primary-foreground/80 mb-8 flex-grow">
                 {t('app.description')}
               </p>
 
@@ -151,7 +165,7 @@ export function ProductsSection() {
               {/* CTA */}
               <Button
                 asChild
-                className="bg-foreground text-background hover:bg-foreground/90 w-full group"
+                className="bg-foreground text-background hover:bg-foreground/90 dark:bg-secondary dark:text-secondary-foreground dark:hover:bg-secondary/90 w-full group"
               >
                 <a href="https://cracks-app.com" target="_blank" rel="noopener noreferrer">
                   {t('app.cta')}

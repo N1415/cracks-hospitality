@@ -11,18 +11,20 @@ export function HeroSection() {
       className="min-h-screen"
       logo={{
         url: 'https://moyusgyrteirxbivehyz.supabase.co/storage/v1/object/public/Logos/png/hospitality_black.png',
+        darkUrl: 'https://moyusgyrteirxbivehyz.supabase.co/storage/v1/object/public/Logos/png/hospitality_white.png',
         alt: 'Cracks Hospitality',
         text: 'Cracks Hospitality',
       }}
       slogan={t('tagline')}
       title={
         <>
-          {t('subtitle').split(' ').slice(0, 2).join(' ')}
+          {t('subtitleLine1')}
           <br />
-          {t('subtitle').split(' ').slice(2).join(' ')}
+          {t('subtitleLine2')}
         </>
       }
       subtitle={t('description')}
+      subtitle2={t('description2')}
       callToAction={{
         text: t('ctaStudio'),
         href: 'https://cracks-studio.com',
@@ -31,10 +33,10 @@ export function HeroSection() {
         text: t('ctaApp'),
         href: 'https://cracks-app.com',
       }}
-      backgroundImage="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1200&q=80"
+      backgroundImage="https://moyusgyrteirxbivehyz.supabase.co/storage/v1/object/public/Images/Cracks%20website/home-photo.jpg"
       contactInfo={{
         website: 'cracks-hospitality.com',
-        phone: '+66 (0) 123 456 789',
+        phone: '+66 (0) 80 074 3811',
         address: 'Bangkok, Thailand',
       }}
     />

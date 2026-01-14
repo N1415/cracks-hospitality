@@ -1,7 +1,8 @@
 import { setRequestLocale } from 'next-intl/server';
-import { Navigation } from '@/components/landing/Navigation';
+import { NavigationWrapper } from '@/components/landing/NavigationWrapper';
 import { HeroSection } from '@/components/landing/HeroSection';
 import { AboutSection } from '@/components/landing/AboutSection';
+import { DifferenceSection } from '@/components/landing/DifferenceSection';
 import { ProductsSection } from '@/components/landing/ProductsSection';
 import { FoundersSection } from '@/components/landing/FoundersSection';
 import { ContactSection } from '@/components/landing/ContactSection';
@@ -17,9 +18,10 @@ export default async function HomePage({
 
   return (
     <main className="min-h-screen">
-      <Navigation />
+      <NavigationWrapper />
       <HeroSection />
       <AboutSection />
+      <DifferenceSection />
       <ProductsSection />
       <FoundersSection />
       <ContactSection />

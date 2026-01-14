@@ -5,22 +5,28 @@
   },
   "nav": {
     "about": "Nosotros",
-    "products": "Productos",
+    "difference": "Cómo Trabajamos",
+    "products": "Servicios",
     "founders": "Fundadores",
     "contact": "Contacto"
   },
   "hero": {
     "title": "Cracks Hospitality",
     "tagline": "Soul & Scale",
-    "subtitle": "Donde la Visión de Hospitalidad se Hace Realidad",
-    "description": "Dos soluciones poderosas. Una filosofía unificada. Ayudamos a operadores visionarios a construir conceptos de hospitalidad que equilibran autenticidad con escalabilidad.",
+    "subtitleLine1": "Construyendo Iconos de Hospitalidad,",
+    "subtitleLine2": "Un Restaurante a la Vez",
+    "subtitle": "Construyendo Iconos de Hospitalidad, Un Restaurante a la Vez",
+    "description": "Cracks Hospitality existe para diseñar, operacionalizar y escalar negocios de hospitalidad combinando consultoría experta, tecnología avanzada y medios orientados a la educación.",
+    "description2": "Creamos soluciones pragmáticas y enfocadas en la rentabilidad que conectan la excelencia operativa, la experiencia del cliente y la escalabilidad de marca.",
     "ctaStudio": "Explorar Cracks Studio",
     "ctaApp": "Descubrir Cracks App"
   },
   "about": {
     "title": "Nuestra Filosofía",
-    "subtitle": "Soul & Scale",
-    "description": "Cracks Hospitality nació de una creencia simple: los mejores restaurantes equilibran autenticidad con escalabilidad. Lo llamamos Soul & Scale — crear conceptos de hospitalidad que se sienten genuinos mientras están construidos para crecer.",
+    "subtitle": "Conoce al Equipo",
+    "description": "Fundado por Manuel Palacio, co-fundador del Pirata Group de Hong Kong con 27 locales y Cento Bangkok, y Nacho López, con más de 15 años de experiencia transformando espacios en destinos de alta facturación, aportamos una experiencia incomparable a tu proyecto de hospitalidad.",
+    "description2": "Visualizamos un hub de hospitalidad donde los restauradores tienen todo lo que necesitan para dar vida a sus conceptos. Un lugar donde la guía experta, la tecnología inteligente y el conocimiento real de la industria se unen para construir y lanzar más rápido, más inteligente y con menos estrés.",
+    "description3": "Ya seas un restaurador primerizo o un grupo hotelero global, nuestro objetivo es el mismo: traerte todo lo que hemos aprendido en más de 20 años y 50+ aperturas. Los éxitos, los fracasos, las lecciones. Para que puedas saltarte las partes dolorosas y llegar a lo que importa.",
     "pillars": {
       "soul": {
         "title": "Soul",
@@ -35,6 +41,27 @@
         "description": "Consultoría experta potenciada por tecnología impulsada por IA, conectando experiencia humana con automatización inteligente."
       }
     }
+  },
+  "difference": {
+    "title": "Cómo Pensamos Diferente",
+    "subtitle": "Construimos restaurantes destino que rinden.",
+    "intro": "Cada concepto está arraigado en el lugar, impulsado por un propósito y construido para rendir — para los clientes, los equipos y los propietarios por igual.",
+    "items": {
+      "traffic": {
+        "title": "Restaurantes Que Generan Tráfico",
+        "description": "Convertimos el F&B en una razón central por la que la gente visita tu espacio — no solo por la comida, sino por la energía, identidad y experiencia que ofrece."
+      },
+      "creativity": {
+        "title": "Creatividad Orientada al Rendimiento",
+        "description": "Combinamos diseño reflexivo con visión comercial — creando conceptos que son tanto emocionalmente resonantes como operativamente sólidos."
+      },
+      "speed": {
+        "title": "Velocidad y Ejecución",
+        "description": "Trabajamos con claridad y ritmo — proporcionando a los operadores hojas de ruta claras y planes accionables que aceleran resultados y reducen ineficiencias."
+      }
+    },
+    "conclusionTitle": "La Diferencia",
+    "conclusion": "Damos a los restaurantes una razón para existir más allá de sus paredes, convirtiéndolos en destinos duraderos con impacto real."
   },
   "products": {
     "title": "Nuestras Soluciones",
@@ -114,16 +141,24 @@
   },
   "footer": {
     "tagline": "Soul & Scale — Donde la visión de hospitalidad se hace realidad.",
-    "products": "Productos",
+    "products": "Servicios",
     "company": "Empresa",
     "contact": "Contacto",
     "studio": "Cracks Studio",
     "app": "Cracks App",
+    "home": "Inicio",
+    "vision": "Visión",
+    "howWeWork": "Cómo Trabajamos",
+    "ourSolutions": "Nuestras Soluciones",
+    "team": "Equipo",
     "aboutUs": "Sobre Nosotros",
     "ourTeam": "Nuestro Equipo",
-    "email": "hello@cracks-hospitality.com",
+    "email": "nacho@cracks-studio.com",
+    "phone": "+66 80 074 3811",
     "location": "Bangkok, Tailandia",
     "rights": "Todos los derechos reservados.",
-    "privacy": "Política de Privacidad"
+    "privacy": "Política de Privacidad",
+    "terms": "Términos de Servicio",
+    "cookies": "Política de Cookies"
   }
 }

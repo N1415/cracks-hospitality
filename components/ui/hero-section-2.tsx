@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { useTheme } from 'next-themes';
 import { cn } from "@/lib/utils";
 import { motion } from 'motion/react';
 
@@ -34,12 +35,14 @@ const InfoIcon = ({ type }: { type: 'website' | 'phone' | 'address' }) => {
 interface HeroSectionProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'title'> {
   logo?: {
     url: string;
+    darkUrl?: string;
     alt: string;
     text?: string;
   };
   slogan?: string;
   title: React.ReactNode;
   subtitle: string;
+  subtitle2?: string;
   callToAction: {
     text: string;
     href: string;
@@ -57,8 +60,12 @@ interface HeroSectionProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 't
 }
 
 const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
-  ({ className, logo, slogan, title, subtitle, callToAction, secondaryCallToAction, backgroundImage, contactInfo, ...props }, ref) => {
-    
+  ({ className, logo, slogan, title, subtitle, subtitle2, callToAction, secondaryCallToAction, backgroundImage, contactInfo, ...props }, ref) => {
+    const { resolvedTheme } = useTheme();
+
+    // Get the appropriate logo URL based on theme
+    const logoUrl = logo ? (resolvedTheme === 'dark' && logo.darkUrl ? logo.darkUrl : logo.url) : undefined;
+
     // Animation variants for the container to orchestrate children animations
     const containerVariants = {
       hidden: { opacity: 0 },
@@ -104,12 +111,11 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
             {/* Top Section: Logo & Main Content */}
             <div>
                 <motion.header className="mb-12" variants={itemVariants}>
-                    {logo && (
+                    {logo && logoUrl && (
                         <div className="flex items-center">
-                            <img src={logo.url} alt={logo.alt} className="mr-3 h-8" />
+                            <img src={logoUrl} alt={logo.alt} className="mr-3 h-8" />
                             <div>
-                                {logo.text && <p className="text-lg font-bold text-foreground">{logo.text}</p>}
-                                {slogan && <p className="text-xs tracking-wider text-muted-foreground">{slogan}</p>}
+                                {logo.text && <p className="text-2xl font-serif font-bold text-foreground" style={{ fontVariant: 'small-caps' }}>{logo.text}</p>}
                             </div>
                         </div>
                     )}
@@ -120,15 +126,16 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
                         {title}
                     </motion.h1>
                     <motion.div className="my-6 h-1 w-20 bg-primary" variants={itemVariants}></motion.div>
-                    <motion.p className="mb-8 max-w-md text-base text-muted-foreground" variants={itemVariants}>
-                        {subtitle}
-                    </motion.p>
+                    <motion.div className="mb-8 max-w-md space-y-4" variants={itemVariants}>
+                        <p className="text-base text-muted-foreground">{subtitle}</p>
+                        {subtitle2 && <p className="text-base text-muted-foreground">{subtitle2}</p>}
+                    </motion.div>
                     <motion.div className="flex flex-col sm:flex-row gap-4" variants={itemVariants}>
-                        <a href={callToAction.href} className="inline-flex items-center justify-center px-6 py-3 bg-foreground text-background font-bold tracking-wider transition-colors hover:bg-foreground/90 rounded-md">
+                        <a href={callToAction.href} className="inline-flex items-center justify-center px-6 py-3 bg-foreground text-background font-serif font-bold tracking-wider transition-colors hover:bg-foreground/90 rounded-md" style={{ fontVariant: 'small-caps' }}>
                             {callToAction.text}
                         </a>
                         {secondaryCallToAction && (
-                            <a href={secondaryCallToAction.href} className="inline-flex items-center justify-center px-6 py-3 bg-secondary text-white font-bold tracking-wider transition-colors hover:bg-secondary/90 rounded-md">
+                            <a href={secondaryCallToAction.href} className="inline-flex items-center justify-center px-6 py-3 bg-secondary text-white font-serif font-bold tracking-wider transition-colors hover:bg-secondary/90 rounded-md" style={{ fontVariant: 'small-caps' }}>
                                 {secondaryCallToAction.text}
                             </a>
                         )}

@@ -5,22 +5,28 @@
   },
   "nav": {
     "about": "About",
-    "products": "Products",
+    "difference": "How We Work",
+    "products": "Services",
     "founders": "Founders",
     "contact": "Contact"
   },
   "hero": {
     "title": "Cracks Hospitality",
-    "tagline": "Soul & Scale",
-    "subtitle": "Where Hospitality Vision Meets Execution",
-    "description": "Two powerful solutions. One unified philosophy. We help visionary operators build hospitality concepts that balance authenticity with scalability.",
+    "tagline": "Building destination restaurants that perform.",
+    "subtitleLine1": "Building Hospitality Icons,",
+    "subtitleLine2": "One Restaurant at a Time",
+    "subtitle": "Building Hospitality Icons, One Restaurant at a Time",
+    "description": "Cracks Hospitality exists to design, operationalize, and scale hospitality businesses by combining expert consulting, advanced technology, and education-driven media.",
+    "description2": "We create pragmatic, profit-focused solutions that bridge the gap between operational excellence, guest experience, and brand scalability.",
     "ctaStudio": "Explore Cracks Studio",
     "ctaApp": "Discover Cracks App"
   },
   "about": {
     "title": "Our Philosophy",
-    "subtitle": "Soul & Scale",
-    "description": "Cracks Hospitality was born from a simple belief: the best restaurants balance authenticity with scalability. We call it Soul & Scale — creating hospitality concepts that feel genuine while being built to grow.",
+    "subtitle": "Meet the Team",
+    "description": "Founded by Manuel Palacio, co-founder of Hong Kong's Pirata Group with 27 venues and Cento Bangkok, and Nacho López, with 15+ years' experience turning raw spaces into high-revenue destinations, we bring unparalleled expertise to your hospitality venture.",
+    "description2": "We envision a hospitality hub where restaurateurs have everything they need to bring their concepts to life. A place where expert guidance, smart technology, and real industry knowledge come together to build and launch faster, smarter, and with less overwhelm.",
+    "description3": "Whether you're a first-time restaurateur or a global hotel group, our goal is the same: to bring everything we've learned over 20 years and 50+ openings to you. The wins, the failures, the lessons. So you can skip the painful parts and get to what matters.",
     "pillars": {
       "soul": {
         "title": "Soul",
@@ -36,12 +42,33 @@
       }
     }
   },
+  "difference": {
+    "title": "How We Think Differently",
+    "subtitle": "We build destination restaurants that perform.",
+    "intro": "Each concept is rooted in place, driven by purpose, and built to perform. For guests, teams, and owners alike.",
+    "items": {
+      "traffic": {
+        "title": "Restaurants That Drive Traffic",
+        "description": "We turn F&B into a core reason people visit your space; not just for the food, but for the energy, identity, and experience it offers."
+      },
+      "creativity": {
+        "title": "Performance-Driven Creativity",
+        "description": "Combining thoughtful design with commercial insight to craft concepts that are both emotionally resonant and operationally sound."
+      },
+      "speed": {
+        "title": "Speed & Execution",
+        "description": "Work with clarity and pace. Our solutions provides operators clear roadmaps and actionable plans that accelerate results and reduce inefficiencies."
+      }
+    },
+    "conclusionTitle": "The Difference",
+    "conclusion": "We give restaurants a reason to exist beyond their walls, turning them into lasting destinations with real impact."
+  },
   "products": {
     "title": "Our Solutions",
     "subtitle": "Two paths to hospitality excellence",
     "studio": {
       "name": "Cracks Studio",
-      "tagline": "Building Hospitality Icons, One Restaurant at a Time",
+      "tagline": "Cracks Hospitality Studio",
       "description": "Hands-on consulting for restaurant concept development, from strategy to successful launch. Perfect for operators who want expert guidance through every phase.",
       "features": {
         "concept": "Concept Development & Strategy",
@@ -54,10 +81,10 @@
     },
     "app": {
       "name": "Cracks App",
-      "tagline": "AI-Powered Restaurant Development",
-      "description": "The intelligent platform that transforms your restaurant vision into a comprehensive, actionable business plan. Perfect for entrepreneurs who want to validate and develop concepts efficiently.",
+      "tagline": "Cracks Hospitality App",
+      "description": "Our app transforms your restaurant vision into a comprehensive, actionable business plan. Perfect for entrepreneurs who want to validate and develop concepts efficiently.",
       "features": {
-        "ai": "AI Concept Generation & Validation",
+        "ai": "Concept Generation & Validation",
         "financial": "Financial Modeling (CAPEX/OPEX/P&L)",
         "competitor": "Competitor Intelligence & Market Research",
         "staff": "Staff Planning & Training Materials"
@@ -114,16 +141,24 @@
   },
   "footer": {
     "tagline": "Soul & Scale — Where hospitality vision meets execution.",
-    "products": "Products",
+    "products": "Services",
     "company": "Company",
     "contact": "Contact",
     "studio": "Cracks Studio",
     "app": "Cracks App",
+    "home": "Home",
+    "vision": "Vision",
+    "howWeWork": "How We Work",
+    "ourSolutions": "Our Solutions",
+    "team": "Team",
     "aboutUs": "About Us",
     "ourTeam": "Our Team",
-    "email": "hello@cracks-hospitality.com",
+    "email": "nacho@cracks-studio.com",
+    "phone": "+66 80 074 3811",
     "location": "Bangkok, Thailand",
     "rights": "All rights reserved.",
-    "privacy": "Privacy Policy"
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "cookies": "Cookie Policy"
   }
 }
