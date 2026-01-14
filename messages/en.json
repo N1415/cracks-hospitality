@@ -1,0 +1,129 @@
+{
+  "metadata": {
+    "title": "Cracks Hospitality | Soul & Scale",
+    "description": "Where hospitality vision meets execution. Expert consulting and AI-powered technology for restaurant success."
+  },
+  "nav": {
+    "about": "About",
+    "products": "Products",
+    "founders": "Founders",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Cracks Hospitality",
+    "tagline": "Soul & Scale",
+    "subtitle": "Where Hospitality Vision Meets Execution",
+    "description": "Two powerful solutions. One unified philosophy. We help visionary operators build hospitality concepts that balance authenticity with scalability.",
+    "ctaStudio": "Explore Cracks Studio",
+    "ctaApp": "Discover Cracks App"
+  },
+  "about": {
+    "title": "Our Philosophy",
+    "subtitle": "Soul & Scale",
+    "description": "Cracks Hospitality was born from a simple belief: the best restaurants balance authenticity with scalability. We call it Soul & Scale — creating hospitality concepts that feel genuine while being built to grow.",
+    "pillars": {
+      "soul": {
+        "title": "Soul",
+        "description": "Authentic concepts with cultural depth and genuine guest experiences that create lasting connections."
+      },
+      "scale": {
+        "title": "Scale",
+        "description": "Operational systems designed for sustainable growth, profitability, and consistent excellence across locations."
+      },
+      "synergy": {
+        "title": "Synergy",
+        "description": "Expert consulting powered by AI-driven technology, bridging human expertise with intelligent automation."
+      }
+    }
+  },
+  "products": {
+    "title": "Our Solutions",
+    "subtitle": "Two paths to hospitality excellence",
+    "studio": {
+      "name": "Cracks Studio",
+      "tagline": "Building Hospitality Icons, One Restaurant at a Time",
+      "description": "Hands-on consulting for restaurant concept development, from strategy to successful launch. Perfect for operators who want expert guidance through every phase.",
+      "features": {
+        "concept": "Concept Development & Strategy",
+        "design": "Design Coordination & Brand Identity",
+        "operations": "Pre-Opening Operations & Training",
+        "management": "Management & Optimization Services"
+      },
+      "cta": "Learn More",
+      "audience": "For: Hotel groups, developers, restaurateurs"
+    },
+    "app": {
+      "name": "Cracks App",
+      "tagline": "AI-Powered Restaurant Development",
+      "description": "The intelligent platform that transforms your restaurant vision into a comprehensive, actionable business plan. Perfect for entrepreneurs who want to validate and develop concepts efficiently.",
+      "features": {
+        "ai": "AI Concept Generation & Validation",
+        "financial": "Financial Modeling (CAPEX/OPEX/P&L)",
+        "competitor": "Competitor Intelligence & Market Research",
+        "staff": "Staff Planning & Training Materials"
+      },
+      "cta": "Start Building",
+      "audience": "For: Entrepreneurs, franchise operators, F&B startups"
+    }
+  },
+  "founders": {
+    "title": "The Founders",
+    "subtitle": "40+ years of combined experience. 50+ successful openings across 3 continents.",
+    "manuel": {
+      "name": "Manuel Palacio",
+      "role": "Serial Founder & Hospitality Visionary",
+      "bio": "Co-founder of Pirata Group, one of Hong Kong's most successful restaurant portfolios with 27 venues across 13 brands including PICI, TokyoLima, and Pirata. Manuel brings a proven track record of building culture-first teams and scaling hospitality brands across Asia.",
+      "achievements": {
+        "1": "Co-founder of Pirata Group (27 venues, 13 brands)",
+        "2": "Scaled brands like PICI, TokyoLima, Pirata across Asia",
+        "3": "Chairman of Pirata Group, Founder of Cento Bangkok"
+      }
+    },
+    "nacho": {
+      "name": "Nacho López",
+      "role": "F&B Strategist & Concept Builder",
+      "bio": "With 15+ years in hospitality across Spain, Hong Kong, and Thailand, Nacho has led operations at some of the industry's most celebrated venues. His people-first approach and operational excellence have driven success from Ibiza beach clubs to Hong Kong's top pasta concepts.",
+      "achievements": {
+        "1": "15+ years hospitality experience across 3 continents",
+        "2": "Operations Manager at PICI Hong Kong",
+        "3": "Director at Cala Bassa Beach Club, Ibiza"
+      }
+    }
+  },
+  "contact": {
+    "title": "Let's Talk",
+    "subtitle": "Whether you're looking for hands-on consulting or an AI-powered development platform, we're here to help you build something exceptional.",
+    "form": {
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email",
+      "company": "Company (optional)",
+      "phone": "Phone (optional)",
+      "interest": "I'm interested in...",
+      "interestOptions": {
+        "studio": "Consulting (Cracks Studio)",
+        "app": "Platform (Cracks App)",
+        "both": "Both"
+      },
+      "message": "Message",
+      "submit": "Send Message",
+      "sending": "Sending...",
+      "success": "Thank you! We'll be in touch soon.",
+      "error": "Something went wrong. Please try again."
+    }
+  },
+  "footer": {
+    "tagline": "Soul & Scale — Where hospitality vision meets execution.",
+    "products": "Products",
+    "company": "Company",
+    "contact": "Contact",
+    "studio": "Cracks Studio",
+    "app": "Cracks App",
+    "aboutUs": "About Us",
+    "ourTeam": "Our Team",
+    "email": "hello@cracks-hospitality.com",
+    "location": "Bangkok, Thailand",
+    "rights": "All rights reserved.",
+    "privacy": "Privacy Policy"
+  }
+}

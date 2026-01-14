@@ -1,0 +1,129 @@
+{
+  "metadata": {
+    "title": "Cracks Hospitality | Soul & Scale",
+    "description": "Donde la visión de hospitalidad se convierte en realidad. Consultoría experta y tecnología impulsada por IA para el éxito de restaurantes."
+  },
+  "nav": {
+    "about": "Nosotros",
+    "products": "Productos",
+    "founders": "Fundadores",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "title": "Cracks Hospitality",
+    "tagline": "Soul & Scale",
+    "subtitle": "Donde la Visión de Hospitalidad se Hace Realidad",
+    "description": "Dos soluciones poderosas. Una filosofía unificada. Ayudamos a operadores visionarios a construir conceptos de hospitalidad que equilibran autenticidad con escalabilidad.",
+    "ctaStudio": "Explorar Cracks Studio",
+    "ctaApp": "Descubrir Cracks App"
+  },
+  "about": {
+    "title": "Nuestra Filosofía",
+    "subtitle": "Soul & Scale",
+    "description": "Cracks Hospitality nació de una creencia simple: los mejores restaurantes equilibran autenticidad con escalabilidad. Lo llamamos Soul & Scale — crear conceptos de hospitalidad que se sienten genuinos mientras están construidos para crecer.",
+    "pillars": {
+      "soul": {
+        "title": "Soul",
+        "description": "Conceptos auténticos con profundidad cultural y experiencias genuinas que crean conexiones duraderas."
+      },
+      "scale": {
+        "title": "Scale",
+        "description": "Sistemas operativos diseñados para crecimiento sostenible, rentabilidad y excelencia consistente en todas las ubicaciones."
+      },
+      "synergy": {
+        "title": "Sinergia",
+        "description": "Consultoría experta potenciada por tecnología impulsada por IA, conectando experiencia humana con automatización inteligente."
+      }
+    }
+  },
+  "products": {
+    "title": "Nuestras Soluciones",
+    "subtitle": "Dos caminos hacia la excelencia en hospitalidad",
+    "studio": {
+      "name": "Cracks Studio",
+      "tagline": "Construyendo Iconos de Hospitalidad, Un Restaurante a la Vez",
+      "description": "Consultoría práctica para desarrollo de conceptos de restaurantes, desde estrategia hasta lanzamiento exitoso. Perfecto para operadores que quieren guía experta en cada fase.",
+      "features": {
+        "concept": "Desarrollo de Concepto y Estrategia",
+        "design": "Coordinación de Diseño e Identidad de Marca",
+        "operations": "Operaciones Pre-Apertura y Capacitación",
+        "management": "Servicios de Gestión y Optimización"
+      },
+      "cta": "Saber Más",
+      "audience": "Para: Grupos hoteleros, desarrolladores, restauradores"
+    },
+    "app": {
+      "name": "Cracks App",
+      "tagline": "Desarrollo de Restaurantes Impulsado por IA",
+      "description": "La plataforma inteligente que transforma tu visión de restaurante en un plan de negocio completo y accionable. Perfecto para emprendedores que quieren validar y desarrollar conceptos eficientemente.",
+      "features": {
+        "ai": "Generación y Validación de Conceptos con IA",
+        "financial": "Modelado Financiero (CAPEX/OPEX/P&L)",
+        "competitor": "Inteligencia de Competidores e Investigación de Mercado",
+        "staff": "Planificación de Personal y Materiales de Capacitación"
+      },
+      "cta": "Comenzar a Construir",
+      "audience": "Para: Emprendedores, operadores de franquicias, startups F&B"
+    }
+  },
+  "founders": {
+    "title": "Los Fundadores",
+    "subtitle": "Más de 40 años de experiencia combinada. Más de 50 aperturas exitosas en 3 continentes.",
+    "manuel": {
+      "name": "Manuel Palacio",
+      "role": "Fundador Serial y Visionario de Hospitalidad",
+      "bio": "Co-fundador de Pirata Group, uno de los portafolios de restaurantes más exitosos de Hong Kong con 27 locales en 13 marcas incluyendo PICI, TokyoLima y Pirata. Manuel aporta un historial comprobado de construir equipos centrados en la cultura y escalar marcas de hospitalidad en Asia.",
+      "achievements": {
+        "1": "Co-fundador de Pirata Group (27 locales, 13 marcas)",
+        "2": "Escaló marcas como PICI, TokyoLima, Pirata en Asia",
+        "3": "Presidente de Pirata Group, Fundador de Cento Bangkok"
+      }
+    },
+    "nacho": {
+      "name": "Nacho López",
+      "role": "Estratega F&B y Constructor de Conceptos",
+      "bio": "Con más de 15 años en hospitalidad en España, Hong Kong y Tailandia, Nacho ha liderado operaciones en algunos de los locales más celebrados de la industria. Su enfoque centrado en las personas y excelencia operativa han impulsado el éxito desde beach clubs de Ibiza hasta los mejores conceptos de pasta de Hong Kong.",
+      "achievements": {
+        "1": "Más de 15 años de experiencia en hospitalidad en 3 continentes",
+        "2": "Gerente de Operaciones en PICI Hong Kong",
+        "3": "Director en Cala Bassa Beach Club, Ibiza"
+      }
+    }
+  },
+  "contact": {
+    "title": "Hablemos",
+    "subtitle": "Ya sea que busques consultoría práctica o una plataforma de desarrollo impulsada por IA, estamos aquí para ayudarte a construir algo excepcional.",
+    "form": {
+      "firstName": "Nombre",
+      "lastName": "Apellido",
+      "email": "Email",
+      "company": "Empresa (opcional)",
+      "phone": "Teléfono (opcional)",
+      "interest": "Me interesa...",
+      "interestOptions": {
+        "studio": "Consultoría (Cracks Studio)",
+        "app": "Plataforma (Cracks App)",
+        "both": "Ambos"
+      },
+      "message": "Mensaje",
+      "submit": "Enviar Mensaje",
+      "sending": "Enviando...",
+      "success": "¡Gracias! Nos pondremos en contacto pronto.",
+      "error": "Algo salió mal. Por favor intenta de nuevo."
+    }
+  },
+  "footer": {
+    "tagline": "Soul & Scale — Donde la visión de hospitalidad se hace realidad.",
+    "products": "Productos",
+    "company": "Empresa",
+    "contact": "Contacto",
+    "studio": "Cracks Studio",
+    "app": "Cracks App",
+    "aboutUs": "Sobre Nosotros",
+    "ourTeam": "Nuestro Equipo",
+    "email": "hello@cracks-hospitality.com",
+    "location": "Bangkok, Tailandia",
+    "rights": "Todos los derechos reservados.",
+    "privacy": "Política de Privacidad"
+  }
+}
