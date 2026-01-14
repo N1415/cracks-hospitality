@@ -2,6 +2,7 @@
 
 import { useTranslations } from 'next-intl';
 import { motion } from 'motion/react';
+import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Users, Palette, Calendar, Settings, Brain, LineChart, Search, UserCheck } from 'lucide-react';
 import { AnimatedGridPattern } from '@/components/ui/animated-grid-pattern';
@@ -26,10 +27,10 @@ export function ProductsSection() {
   return (
     <section id="products" className="relative py-24 lg:py-32 bg-background">
       <AnimatedGridPattern
-        numSquares={30}
+        numSquares={12}
         maxOpacity={0.1}
-        duration={3}
-        repeatDelay={1}
+        duration={4}
+        repeatDelay={2}
         className="[mask-image:linear-gradient(to_left,white,transparent),linear-gradient(to_bottom,transparent,white_20%,white_80%,transparent)] [mask-composite:intersect] fill-primary stroke-primary dark:fill-primary/30 dark:stroke-primary/30"
       />
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -57,16 +58,20 @@ export function ProductsSection() {
           >
             <div className="bg-foreground text-background rounded-2xl p-8 lg:p-10 h-full flex flex-col">
               {/* Logo */}
-              <div className="mb-6">
-                <img
+              <div className="mb-6 relative h-10 w-36">
+                <Image
                   src="https://moyusgyrteirxbivehyz.supabase.co/storage/v1/object/public/Logos/png/studio_white.png"
                   alt="Cracks Studio"
-                  className="h-10 dark:hidden"
+                  fill
+                  sizes="144px"
+                  className="object-contain object-left dark:hidden"
                 />
-                <img
+                <Image
                   src="https://moyusgyrteirxbivehyz.supabase.co/storage/v1/object/public/Logos/png/studio_black.png"
                   alt="Cracks Studio"
-                  className="h-10 hidden dark:block"
+                  fill
+                  sizes="144px"
+                  className="object-contain object-left hidden dark:block"
                 />
               </div>
 
@@ -123,11 +128,13 @@ export function ProductsSection() {
           >
             <div className="bg-primary rounded-2xl p-8 lg:p-10 h-full flex flex-col">
               {/* Logo */}
-              <div className="mb-6">
-                <img
+              <div className="mb-6 relative h-10 w-36">
+                <Image
                   src="https://moyusgyrteirxbivehyz.supabase.co/storage/v1/object/public/Logos/png/app_black.png"
                   alt="Cracks App"
-                  className="h-10"
+                  fill
+                  sizes="144px"
+                  className="object-contain object-left"
                 />
               </div>
 

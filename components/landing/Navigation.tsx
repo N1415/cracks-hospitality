@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
 import { useTheme } from 'next-themes';
 import { Link, usePathname, useRouter } from '@/i18n/navigation';
+import Image from 'next/image';
 import { Menu, X, Globe, Sun, Moon } from 'lucide-react';
 import { locales, type Locale, localeNames } from '@/i18n/config';
 import { Button } from '@/components/ui/button';
@@ -44,25 +45,33 @@ export function Navigation() {
   }, [isOpen]);
 
   useEffect(() => {
+    let ticking = false;
+    let lastKnownScrollY = lastScrollY;
+
     const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      const isPastHero = currentScrollY > 100;
+      lastKnownScrollY = window.scrollY;
 
-      setScrolled(currentScrollY > 50);
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          const currentScrollY = lastKnownScrollY;
+          const isPastHero = currentScrollY > 100;
 
-      // Only show this navbar when past hero section
-      if (!isPastHero) {
-        // In hero section - hide this navbar (hero nav is showing)
-        setVisible(false);
-      } else if (currentScrollY > lastScrollY) {
-        // Scrolling down past hero - hide
-        setVisible(false);
-      } else {
-        // Scrolling up past hero - show
-        setVisible(true);
+          setScrolled(currentScrollY > 50);
+
+          // Only show this navbar when past hero section
+          if (!isPastHero) {
+            setVisible(false);
+          } else if (currentScrollY > lastScrollY) {
+            setVisible(false);
+          } else {
+            setVisible(true);
+          }
+
+          setLastScrollY(currentScrollY);
+          ticking = false;
+        });
+        ticking = true;
       }
-
-      setLastScrollY(currentScrollY);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -99,16 +108,22 @@ export function Navigation() {
             <div className="flex items-center gap-6">
               {/* Logo */}
               <Link href="/" className="flex items-center gap-2">
-                <img
-                  src="https://moyusgyrteirxbivehyz.supabase.co/storage/v1/object/public/Logos/png/hospitality_black.png"
-                  alt="Cracks Hospitality"
-                  className="h-8 dark:hidden"
-                />
-                <img
-                  src="https://moyusgyrteirxbivehyz.supabase.co/storage/v1/object/public/Logos/png/hospitality_white.png"
-                  alt="Cracks Hospitality"
-                  className="h-8 hidden dark:block"
-                />
+                <div className="relative h-8 w-28">
+                  <Image
+                    src="https://moyusgyrteirxbivehyz.supabase.co/storage/v1/object/public/Logos/png/hospitality_black.png"
+                    alt="Cracks Hospitality"
+                    fill
+                    sizes="112px"
+                    className="object-contain object-left dark:hidden"
+                  />
+                  <Image
+                    src="https://moyusgyrteirxbivehyz.supabase.co/storage/v1/object/public/Logos/png/hospitality_white.png"
+                    alt="Cracks Hospitality"
+                    fill
+                    sizes="112px"
+                    className="object-contain object-left hidden dark:block"
+                  />
+                </div>
               </Link>
 
               {/* Nav Links - Desktop */}
@@ -173,16 +188,22 @@ export function Navigation() {
         {/* Header */}
         <div className="flex items-center justify-between p-6 border-b border-border">
           <div className="flex items-center gap-3">
-            <img
-              src="https://moyusgyrteirxbivehyz.supabase.co/storage/v1/object/public/Logos/png/hospitality_black.png"
-              alt="Cracks Hospitality"
-              className="h-8 dark:hidden"
-            />
-            <img
-              src="https://moyusgyrteirxbivehyz.supabase.co/storage/v1/object/public/Logos/png/hospitality_white.png"
-              alt="Cracks Hospitality"
-              className="h-8 hidden dark:block"
-            />
+            <div className="relative h-8 w-28">
+              <Image
+                src="https://moyusgyrteirxbivehyz.supabase.co/storage/v1/object/public/Logos/png/hospitality_black.png"
+                alt="Cracks Hospitality"
+                fill
+                sizes="112px"
+                className="object-contain object-left dark:hidden"
+              />
+              <Image
+                src="https://moyusgyrteirxbivehyz.supabase.co/storage/v1/object/public/Logos/png/hospitality_white.png"
+                alt="Cracks Hospitality"
+                fill
+                sizes="112px"
+                className="object-contain object-left hidden dark:block"
+              />
+            </div>
           </div>
           <Button
             variant="ghost"

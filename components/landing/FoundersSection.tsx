@@ -2,6 +2,7 @@
 
 import { useTranslations } from 'next-intl';
 import { motion } from 'motion/react';
+import Image from 'next/image';
 import { Linkedin } from 'lucide-react';
 
 const founders = [
@@ -52,11 +53,13 @@ export function FoundersSection() {
             >
               {/* Photo */}
               <div className="relative mb-6 inline-block">
-                <div className="w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden mx-auto ring-4 ring-primary">
-                  <img
+                <div className="w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden mx-auto ring-4 ring-primary relative">
+                  <Image
                     src={founder.image}
                     alt={t(`${founder.key}.name`)}
-                    className={`w-full h-full object-cover ${founder.objectPosition}`}
+                    fill
+                    sizes="(max-width: 768px) 192px, 224px"
+                    className={`object-cover ${founder.objectPosition}`}
                   />
                 </div>
                 {/* LinkedIn Badge */}

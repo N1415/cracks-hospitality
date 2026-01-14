@@ -2,6 +2,7 @@
 
 import { useTranslations } from 'next-intl';
 import { motion } from 'motion/react';
+import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 import { AnimatedGridPattern } from '@/components/ui/animated-grid-pattern';
@@ -12,10 +13,10 @@ export function AboutSection() {
   return (
     <section id="about" className="relative py-24 lg:py-32 bg-background text-foreground">
       <AnimatedGridPattern
-        numSquares={30}
+        numSquares={12}
         maxOpacity={0.1}
-        duration={3}
-        repeatDelay={1}
+        duration={4}
+        repeatDelay={2}
         className="[mask-image:linear-gradient(to_right,white,transparent),linear-gradient(to_bottom,transparent,white_20%,white_80%,transparent)] [mask-composite:intersect] fill-primary stroke-primary dark:fill-primary/30 dark:stroke-primary/30"
       />
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -30,17 +31,21 @@ export function AboutSection() {
           >
             <div className="relative aspect-[4/3] flex items-center justify-center">
               {/* Logo with white circle background */}
-              <div className="relative w-2/3 max-w-xs">
+              <div className="relative w-2/3 max-w-xs aspect-square">
                 <div className="absolute inset-[8%] rounded-full bg-white dark:bg-[#2C2C2C]" />
-                <img
+                <Image
                   src="https://moyusgyrteirxbivehyz.supabase.co/storage/v1/object/public/Logos/png/hospitality_black_large.png"
                   alt="Cracks Hospitality"
-                  className="relative z-10 w-full dark:hidden"
+                  fill
+                  sizes="(max-width: 768px) 66vw, 300px"
+                  className="relative z-10 object-contain dark:hidden"
                 />
-                <img
+                <Image
                   src="https://moyusgyrteirxbivehyz.supabase.co/storage/v1/object/public/Logos/png/hospitality_white_large.png"
                   alt="Cracks Hospitality"
-                  className="relative z-10 w-full hidden dark:block"
+                  fill
+                  sizes="(max-width: 768px) 66vw, 300px"
+                  className="relative z-10 object-contain hidden dark:block"
                 />
               </div>
             </div>

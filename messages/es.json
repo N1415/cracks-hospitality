@@ -160,5 +160,11 @@
     "privacy": "Política de Privacidad",
     "terms": "Términos de Servicio",
     "cookies": "Política de Cookies"
+  },
+  "cookieConsent": {
+    "message": "Utilizamos cookies para mejorar tu experiencia. Al continuar visitando este sitio aceptas nuestro uso de cookies.",
+    "accept": "Aceptar",
+    "decline": "Rechazar",
+    "learnMore": "Más información"
   }
 }

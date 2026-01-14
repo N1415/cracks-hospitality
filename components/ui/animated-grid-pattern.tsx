@@ -127,7 +127,7 @@ export function AnimatedGridPattern({
             transition={{
               duration,
               repeat: 1,
-              delay: index * 0.1,
+              delay: index * 0.2,
               repeatType: "reverse",
             }}
             onAnimationComplete={() => updateSquarePosition(squareId)}
@@ -138,6 +138,7 @@ export function AnimatedGridPattern({
             y={py * height + 1}
             fill="currentColor"
             strokeWidth="0"
+            style={{ willChange: 'opacity' }}
           />
         ))}
       </svg>

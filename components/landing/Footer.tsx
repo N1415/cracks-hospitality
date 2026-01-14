@@ -1,6 +1,7 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
+import Image from 'next/image';
 import { Linkedin, Facebook, Instagram, Mail, MapPin, Phone } from 'lucide-react';
 import { Separator } from '@/components/ui/separator';
 import { Link } from '@/i18n/navigation';
@@ -23,16 +24,22 @@ export function Footer() {
           {/* Brand */}
           <div className="md:col-span-2">
             <div className="flex items-start gap-4 mb-4">
-              <img
-                src="https://moyusgyrteirxbivehyz.supabase.co/storage/v1/object/public/Logos/png/hospitality_black.png"
-                alt="Cracks Hospitality"
-                className="h-16 dark:hidden"
-              />
-              <img
-                src="https://moyusgyrteirxbivehyz.supabase.co/storage/v1/object/public/Logos/png/hospitality_white.png"
-                alt="Cracks Hospitality"
-                className="h-16 hidden dark:block"
-              />
+              <div className="relative h-16 w-16 flex-shrink-0">
+                <Image
+                  src="https://moyusgyrteirxbivehyz.supabase.co/storage/v1/object/public/Logos/png/hospitality_black.png"
+                  alt="Cracks Hospitality"
+                  fill
+                  sizes="64px"
+                  className="object-contain dark:hidden"
+                />
+                <Image
+                  src="https://moyusgyrteirxbivehyz.supabase.co/storage/v1/object/public/Logos/png/hospitality_white.png"
+                  alt="Cracks Hospitality"
+                  fill
+                  sizes="64px"
+                  className="object-contain hidden dark:block"
+                />
+              </div>
               <div className="flex flex-col">
                 <span className="font-serif text-lg font-semibold tracking-wide uppercase">Cracks Hospitality</span>
                 <span className="text-[#2C2C2C]/60 dark:text-[#F5F1E8]/60 text-sm">Building hospitality icons,</span>

@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import { cn } from "@/lib/utils";
 import { motion } from 'motion/react';
 
@@ -66,20 +67,20 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
       visible: {
         opacity: 1,
         transition: {
-          staggerChildren: 0.15,
-          delayChildren: 0.2,
+          staggerChildren: 0.1,
+          delayChildren: 0,
         },
       },
     };
 
     // Animation variants for individual text/UI elements
     const itemVariants = {
-      hidden: { y: 20, opacity: 0 },
+      hidden: { y: 15, opacity: 0 },
       visible: {
         y: 0,
         opacity: 1,
         transition: {
-          duration: 0.5,
+          duration: 0.4,
           ease: "easeOut" as const,
         },
       },
@@ -107,10 +108,26 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
                 <motion.header className="mb-12" variants={itemVariants}>
                     {logo && (
                         <div className="flex items-center">
-                            <img src={logo.url} alt={logo.alt} className="mr-3 h-8 dark:hidden" />
-                            {logo.darkUrl && (
-                                <img src={logo.darkUrl} alt={logo.alt} className="mr-3 h-8 hidden dark:block" />
-                            )}
+                            <div className="relative mr-3 h-8 w-32">
+                                <Image
+                                    src={logo.url}
+                                    alt={logo.alt}
+                                    fill
+                                    sizes="128px"
+                                    className="object-contain object-left dark:hidden"
+                                    priority
+                                />
+                                {logo.darkUrl && (
+                                    <Image
+                                        src={logo.darkUrl}
+                                        alt={logo.alt}
+                                        fill
+                                        sizes="128px"
+                                        className="object-contain object-left hidden dark:block"
+                                        priority
+                                    />
+                                )}
+                            </div>
                             <div>
                                 {logo.text && <p className="text-2xl font-serif font-bold text-foreground" style={{ fontVariant: 'small-caps' }}>{logo.text}</p>}
                             </div>
@@ -161,14 +178,19 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
 
         {/* Right Side: Image with Clip Path Animation - Hidden on mobile */}
         <motion.div
-          className="hidden md:block w-full min-h-[300px] bg-cover bg-center md:w-1/2 md:min-h-full lg:w-2/5"
-          style={{
-            backgroundImage: `url(${backgroundImage})`,
-          }}
+          className="hidden md:block relative w-full min-h-[300px] md:w-1/2 md:min-h-full lg:w-2/5 overflow-hidden"
           initial={{ clipPath: 'polygon(100% 0, 100% 0, 100% 100%, 100% 100%)' }}
           animate={{ clipPath: 'polygon(25% 0, 100% 0, 100% 100%, 0% 100%)' }}
           transition={{ duration: 1.2, ease: "circOut" as const }}
         >
+          <Image
+            src={backgroundImage}
+            alt="Hero background"
+            fill
+            sizes="(max-width: 768px) 100vw, 50vw"
+            className="object-cover object-center"
+            priority
+          />
         </motion.div>
         </motion.div>
       </section>

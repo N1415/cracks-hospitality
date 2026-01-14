@@ -2,6 +2,7 @@
 
 import { useTranslations } from 'next-intl';
 import { motion } from 'motion/react';
+import Image from 'next/image';
 import { BentoGrid, BentoGridItem } from '@/components/ui/bento-grid';
 
 export function DifferenceSection() {
@@ -66,12 +67,16 @@ export function DifferenceSection() {
                 title={item.key === 'conclusion' ? t('conclusionTitle') : t(`items.${item.key}.title`)}
                 description={item.key === 'conclusion' ? t('conclusion') : t(`items.${item.key}.description`)}
                 header={
-                  <img
-                    src={item.image}
-                    alt={item.key === 'conclusion' ? 'The Difference' : t(`items.${item.key}.title`)}
-                    className="h-full w-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
-                    style={item.objectPosition ? { objectPosition: item.objectPosition } : undefined}
-                  />
+                  <div className="relative h-full w-full overflow-hidden">
+                    <Image
+                      src={item.image}
+                      alt={item.key === 'conclusion' ? 'The Difference' : t(`items.${item.key}.title`)}
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      className="object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
+                      style={item.objectPosition ? { objectPosition: item.objectPosition } : undefined}
+                    />
+                  </div>
                 }
                 className={item.className}
               />
