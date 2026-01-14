@@ -1,7 +1,6 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import { useTheme } from 'next-themes';
 import { motion } from 'motion/react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Users, Palette, Calendar, Settings, Brain, LineChart, Search, UserCheck } from 'lucide-react';
@@ -23,11 +22,6 @@ const appFeatures = [
 
 export function ProductsSection() {
   const t = useTranslations('products');
-  const { resolvedTheme } = useTheme();
-
-  const studioLogo = resolvedTheme === 'dark'
-    ? 'https://moyusgyrteirxbivehyz.supabase.co/storage/v1/object/public/Logos/png/studio_black.png'
-    : 'https://moyusgyrteirxbivehyz.supabase.co/storage/v1/object/public/Logos/png/studio_white.png';
 
   return (
     <section id="products" className="relative py-24 lg:py-32 bg-background">
@@ -65,9 +59,14 @@ export function ProductsSection() {
               {/* Logo */}
               <div className="mb-6">
                 <img
-                  src={studioLogo}
+                  src="https://moyusgyrteirxbivehyz.supabase.co/storage/v1/object/public/Logos/png/studio_white.png"
                   alt="Cracks Studio"
-                  className="h-10"
+                  className="h-10 dark:hidden"
+                />
+                <img
+                  src="https://moyusgyrteirxbivehyz.supabase.co/storage/v1/object/public/Logos/png/studio_black.png"
+                  alt="Cracks Studio"
+                  className="h-10 hidden dark:block"
                 />
               </div>
 

@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import { useTheme } from 'next-themes';
 import { cn } from "@/lib/utils";
 import { motion } from 'motion/react';
 
@@ -61,11 +60,6 @@ interface HeroSectionProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 't
 
 const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
   ({ className, logo, slogan, title, subtitle, subtitle2, callToAction, secondaryCallToAction, backgroundImage, contactInfo, ...props }, ref) => {
-    const { resolvedTheme } = useTheme();
-
-    // Get the appropriate logo URL based on theme
-    const logoUrl = logo ? (resolvedTheme === 'dark' && logo.darkUrl ? logo.darkUrl : logo.url) : undefined;
-
     // Animation variants for the container to orchestrate children animations
     const containerVariants = {
       hidden: { opacity: 0 },
@@ -111,9 +105,12 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
             {/* Top Section: Logo & Main Content */}
             <div>
                 <motion.header className="mb-12" variants={itemVariants}>
-                    {logo && logoUrl && (
+                    {logo && (
                         <div className="flex items-center">
-                            <img src={logoUrl} alt={logo.alt} className="mr-3 h-8" />
+                            <img src={logo.url} alt={logo.alt} className="mr-3 h-8 dark:hidden" />
+                            {logo.darkUrl && (
+                                <img src={logo.darkUrl} alt={logo.alt} className="mr-3 h-8 hidden dark:block" />
+                            )}
                             <div>
                                 {logo.text && <p className="text-2xl font-serif font-bold text-foreground" style={{ fontVariant: 'small-caps' }}>{logo.text}</p>}
                             </div>
@@ -162,9 +159,9 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
             </motion.footer>
         </div>
 
-        {/* Right Side: Image with Clip Path Animation */}
+        {/* Right Side: Image with Clip Path Animation - Hidden on mobile */}
         <motion.div
-          className="w-full min-h-[300px] bg-cover bg-center md:w-1/2 md:min-h-full lg:w-2/5"
+          className="hidden md:block w-full min-h-[300px] bg-cover bg-center md:w-1/2 md:min-h-full lg:w-2/5"
           style={{
             backgroundImage: `url(${backgroundImage})`,
           }}
