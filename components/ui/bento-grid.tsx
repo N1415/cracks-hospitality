@@ -54,10 +54,10 @@ const BentoGridItem = React.forwardRef<HTMLDivElement, BentoGridItemProps>(
 
         {/* Title and description */}
         <div className="transition-transform duration-200 group-hover:translate-x-1">
-          <div className="font-sans text-sm font-bold text-primary-foreground">
+          <div className="font-sans text-sm font-bold text-foreground">
             {title}
           </div>
-          <p className="font-sans text-xs text-primary-foreground/70">
+          <p className="font-sans text-xs text-foreground/70">
             {description}
           </p>
         </div>
