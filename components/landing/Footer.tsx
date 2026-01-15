@@ -69,7 +69,7 @@ export function Footer() {
 
           {/* Company */}
           <div>
-            <h4 className="font-bold mb-4 text-[#2C2C2C]/90 dark:text-[#F5F1E8]/90">{t('company')}</h4>
+            <h3 className="font-bold mb-4 text-[#2C2C2C]/90 dark:text-[#F5F1E8]/90 text-lg">{t('company')}</h3>
             <ul className="space-y-3">
               <li>
                 <a
@@ -116,7 +116,7 @@ export function Footer() {
 
           {/* Services */}
           <div>
-            <h4 className="font-bold mb-4 text-[#2C2C2C]/90 dark:text-[#F5F1E8]/90">{t('products')}</h4>
+            <h3 className="font-bold mb-4 text-[#2C2C2C]/90 dark:text-[#F5F1E8]/90 text-lg">{t('products')}</h3>
             <ul className="space-y-3">
               <li>
                 <a
@@ -138,7 +138,7 @@ export function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="font-bold mb-4 text-[#2C2C2C]/90 dark:text-[#F5F1E8]/90">{t('contact')}</h4>
+            <h3 className="font-bold mb-4 text-[#2C2C2C]/90 dark:text-[#F5F1E8]/90 text-lg">{t('contact')}</h3>
             <ul className="space-y-3">
               <li className="flex items-center gap-2 text-[#2C2C2C]/60 dark:text-[#F5F1E8]/60">
                 <Mail className="w-4 h-4 flex-shrink-0" />

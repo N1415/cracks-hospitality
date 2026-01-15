@@ -141,6 +141,7 @@ export function NavigationWrapper() {
                 size="icon"
                 className="size-10 text-foreground/80 hover:text-foreground hover:bg-foreground/10"
                 onClick={() => setIsOpen(true)}
+                aria-label="Open menu"
               >
                 <Menu className="size-6" />
               </Button>
@@ -241,6 +242,7 @@ export function NavigationWrapper() {
                 size="icon"
                 className="size-9 text-foreground/80 hover:text-foreground hover:bg-foreground/10"
                 onClick={() => setIsOpen(true)}
+                aria-label="Open menu"
               >
                 <Menu className="size-5" />
               </Button>
@@ -279,6 +281,7 @@ export function NavigationWrapper() {
             size="icon"
             className="size-10"
             onClick={() => setIsOpen(false)}
+            aria-label="Close menu"
           >
             <X className="size-6" />
           </Button>

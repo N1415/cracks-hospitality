@@ -171,6 +171,7 @@ export function Navigation() {
                 size="icon"
                 className="size-10"
                 onClick={() => setIsOpen(true)}
+                aria-label="Open menu"
               >
                 <Menu className="size-6" />
               </Button>
@@ -210,6 +211,7 @@ export function Navigation() {
             size="icon"
             className="size-10"
             onClick={() => setIsOpen(false)}
+            aria-label="Close menu"
           >
             <X className="size-6" />
           </Button>

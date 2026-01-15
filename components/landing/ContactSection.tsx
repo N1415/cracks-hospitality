@@ -183,7 +183,7 @@ export function ContactSection() {
                 }
                 disabled={status === 'sending'}
               >
-                <SelectTrigger>
+                <SelectTrigger id="interest" aria-label={t('form.interest')}>
                   <SelectValue placeholder={t('form.interest')} />
                 </SelectTrigger>
                 <SelectContent>

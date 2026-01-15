@@ -149,7 +149,7 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
                             {callToAction.text}
                         </a>
                         {secondaryCallToAction && (
-                            <a href={secondaryCallToAction.href} className="inline-flex items-center justify-center px-6 py-3 bg-secondary text-white font-serif font-bold tracking-wider transition-colors hover:bg-secondary/90 rounded-md" style={{ fontVariant: 'small-caps' }}>
+                            <a href={secondaryCallToAction.href} className="inline-flex items-center justify-center px-6 py-3 bg-secondary text-[#2C2C2C] font-serif font-bold tracking-wider transition-colors hover:bg-secondary/90 rounded-md" style={{ fontVariant: 'small-caps' }}>
                                 {secondaryCallToAction.text}
                             </a>
                         )}
