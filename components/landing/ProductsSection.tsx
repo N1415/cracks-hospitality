@@ -170,13 +170,10 @@ export function ProductsSection() {
 
               {/* CTA */}
               <Button
-                asChild
-                className="bg-foreground text-background hover:bg-foreground/90 dark:bg-secondary dark:text-secondary-foreground dark:hover:bg-secondary/90 w-full group"
+                disabled
+                className="bg-foreground/50 text-background cursor-not-allowed w-full"
               >
-                <a href="https://cracks-app.com" target="_blank" rel="noopener noreferrer">
-                  {t('app.cta')}
-                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </a>
+                {t('app.cta')}
               </Button>
             </div>
           </motion.div>

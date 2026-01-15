@@ -129,14 +129,9 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a
-                  href="https://cracks-app.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[#2C2C2C]/60 dark:text-[#F5F1E8]/60 hover:text-[#2C2C2C] dark:hover:text-[#F5F1E8] transition-colors"
-                >
-                  {t('app')}
-                </a>
+                <span className="text-[#2C2C2C]/40 dark:text-[#F5F1E8]/40 cursor-not-allowed">
+                  {t('app')} ({t('comingSoon')})
+                </span>
               </li>
             </ul>
           </div>
@@ -146,10 +141,10 @@ export function Footer() {
             <h4 className="font-bold mb-4 text-[#2C2C2C]/90 dark:text-[#F5F1E8]/90">{t('contact')}</h4>
             <ul className="space-y-3">
               <li className="flex items-center gap-2 text-[#2C2C2C]/60 dark:text-[#F5F1E8]/60">
-                <Mail className="w-4 h-4" />
+                <Mail className="w-4 h-4 flex-shrink-0" />
                 <a
                   href="mailto:nacho@cracks-studio.com"
-                  className="hover:text-[#2C2C2C] dark:hover:text-[#F5F1E8] transition-colors"
+                  className="hover:text-[#2C2C2C] dark:hover:text-[#F5F1E8] transition-colors whitespace-nowrap"
                 >
                   {t('email')}
                 </a>

@@ -89,7 +89,7 @@
         "competitor": "Competitor Intelligence & Market Research",
         "staff": "Staff Planning & Training Materials"
       },
-      "cta": "Start Building",
+      "cta": "Coming Soon",
       "audience": "For: Entrepreneurs, franchise operators, F&B startups"
     }
   },
@@ -159,7 +159,8 @@
     "rights": "All rights reserved.",
     "privacy": "Privacy Policy",
     "terms": "Terms of Service",
-    "cookies": "Cookie Policy"
+    "cookies": "Cookie Policy",
+    "comingSoon": "coming soon"
   },
   "cookieConsent": {
     "message": "We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies.",

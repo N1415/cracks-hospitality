@@ -12,7 +12,7 @@ export function DifferenceSection() {
     {
       key: 'traffic',
       // Placeholder - user will provide image later
-      image: 'https://moyusgyrteirxbivehyz.supabase.co/storage/v1/object/public/Images/Cracks%20website/El%20Patio%20de%20Abascal%20septiembre%2024%20270.png',
+      image: 'https://moyusgyrteirxbivehyz.supabase.co/storage/v1/object/public/Images/Cracks%20website/El%20Patio%20de%20Abascal%20septiembre%2024%20270.jpg',
       className: 'md:col-span-1',
       objectPosition: 'center top',
     },
@@ -76,6 +76,9 @@ export function DifferenceSection() {
                       className="object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
                       style={item.objectPosition ? { objectPosition: item.objectPosition } : undefined}
                     />
+                    {item.key === 'traffic' && (
+                      <div className="absolute inset-0 bg-black/5" />
+                    )}
                   </div>
                 }
                 className={item.className}
