@@ -49,7 +49,7 @@ export const siteConfig = {
     logoDark:
       'https://moyusgyrteirxbivehyz.supabase.co/storage/v1/object/public/Logos/png/hospitality_white_large.png',
     ogImage:
-      'https://moyusgyrteirxbivehyz.supabase.co/storage/v1/object/public/Logos/jpg/white_og.jpg',
+      'https://moyusgyrteirxbivehyz.supabase.co/storage/v1/object/public/Logos/jpg/og_hospitality.jpg',
   },
 
   // Keywords for meta tags
